@@ -8,8 +8,8 @@
 control 'docker-present' do
   title 'Docker enabled and running'
   describe service('docker') do
-  	it { should be_enabled }
-  	it { should be_running }
+    it { should be_enabled }
+    it { should be_running }
   end
 end
 
