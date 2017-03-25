@@ -22,3 +22,6 @@ Policyfile.lock.json
 
 # ssh keys
 terraform_aws*
+
+# terraform state
+terraform.tfstate*
