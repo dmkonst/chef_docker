@@ -67,8 +67,8 @@ resource "aws_instance" "chef_provisioning" {
 
   provisioner "remote-exec" {
     inline = [
-        "chmod +x /home/ubuntu/chef/provision.sh",
-        "/home/ubuntu/chef/provision.sh"
+        "chmod +x /home/ubuntu/cookbooks/chef_docker/provision.sh",
+        "/home/ubuntu/cookbooks/chef_docker/provision.sh"
     ]
     connection {
         type = "ssh"
