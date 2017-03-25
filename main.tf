@@ -54,13 +54,13 @@ resource "aws_instance" "chef_provisioning" {
   vpc_security_group_ids = ["${aws_security_group.terraform_chef.id}"]
 
   provisioner "file" {
-    source = "chef"
+    source = "cookbooks"
     destination = "/home/ubuntu"
     connection {
       	type = "ssh"
         user = "ubuntu"
         private_key = "${file("terraform_aws")}"
-        agent = "true"
+        agent = false
         timeout = "1m"
       }
   }
@@ -74,7 +74,7 @@ resource "aws_instance" "chef_provisioning" {
         type = "ssh"
         user = "ubuntu"
         private_key = "${file("terraform_aws")}"
-        agent = "true"
+        agent = false
         timeout = "5m"
         }
   }
